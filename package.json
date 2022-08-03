@@ -9,6 +9,12 @@
   "author": "Jakub Wroński",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.1.2"
-  }
+    "@discordjs/rest": "^1.0.1",
+    "discord.js": "^14.1.2",
+    "dotenv": "^16.0.1"
+  },
+  "runArgs": [
+    "--env-file",
+    "./.env"
+  ]
 }
