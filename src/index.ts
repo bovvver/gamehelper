@@ -38,9 +38,18 @@ client.on('interactionCreate', async (interaction) => {
     const { commandName } = interaction;
 
     if(commandName === 'custom') {
-        const respond = await custom(interaction);
+        const respond = await custom(interaction, 10);
         interaction.reply(respond);
-    } else if(commandName === 'help'){
+    } else if(commandName === '4v4'){
+        const respond = await custom(interaction, 8);
+        interaction.reply(respond);
+    } else if(commandName === '3v3'){
+        const respond = await custom(interaction, 6);
+        interaction.reply(respond);
+    } else if(commandName === '2v2'){
+        const respond = await custom(interaction, 4);
+        interaction.reply(respond);
+    }else if(commandName === 'help'){
         const respond = await help(commands);
         interaction.reply(respond);
     }

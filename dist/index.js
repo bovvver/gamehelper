@@ -41,7 +41,19 @@ client.on('interactionCreate', (interaction) => __awaiter(void 0, void 0, void 0
         return;
     const { commandName } = interaction;
     if (commandName === 'custom') {
-        const respond = yield (0, functions_1.custom)(interaction);
+        const respond = yield (0, functions_1.custom)(interaction, 10);
+        interaction.reply(respond);
+    }
+    else if (commandName === '4v4') {
+        const respond = yield (0, functions_1.custom)(interaction, 8);
+        interaction.reply(respond);
+    }
+    else if (commandName === '3v3') {
+        const respond = yield (0, functions_1.custom)(interaction, 6);
+        interaction.reply(respond);
+    }
+    else if (commandName === '2v2') {
+        const respond = yield (0, functions_1.custom)(interaction, 4);
         interaction.reply(respond);
     }
     else if (commandName === 'help') {

@@ -18,7 +18,7 @@ const help = (commands) => {
 };
 exports.help = help;
 // CUSTOM COMMAND
-const custom = (interaction) => {
+const custom = (interaction, players) => {
     if (!_1.members.includes(interaction.user.username))
         _1.members.push(interaction.user.username);
     else
@@ -30,7 +30,7 @@ const custom = (interaction) => {
             }
         }, 120000);
     }
-    if (_1.members.length === 10) {
+    if (_1.members.length === players) {
         const team1 = [];
         const team2 = [];
         let finished1 = '';
@@ -45,10 +45,10 @@ const custom = (interaction) => {
         team2.forEach((el, index) => {
             finished2 += `${index + 1}. ${el}\n`;
         });
-        return `**(10/10)** Drawing teams!\n\n🔵 Team Blue 🔵\n${finished1}\n🔴 Team Red 🔴\n${finished2}`;
+        return `**(${players}/${players})** Drawing teams!\n\n🔵 Team Blue 🔵\n${finished1}\n🔴 Team Red 🔴\n${finished2}`;
     }
-    else if (_1.members.length < 10) {
-        return `**(${_1.members.length}/10)** | ${10 - _1.members.length} to go!`;
+    else if (_1.members.length < players) {
+        return `**(${_1.members.length}/${players})** | ${players - _1.members.length} to go!`;
     }
     else {
         return 'Something went wrong! :face_with_raised_eyebrow:';

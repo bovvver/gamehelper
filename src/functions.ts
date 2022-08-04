@@ -23,7 +23,7 @@ export const help = (commands: commandsObj): string => {
 
 // CUSTOM COMMAND
 
-export const custom = (interaction: Interaction): string => {
+export const custom = (interaction: Interaction, players: number): string => {
     if(!members.includes(interaction.user.username))
         members.push(interaction.user.username);
     else
@@ -37,7 +37,7 @@ export const custom = (interaction: Interaction): string => {
         }, 120000);
     }
 
-    if(members.length === 10) {
+    if(members.length === players) {
 
         const team1: string[] = [];
         const team2: string[] = [];
@@ -57,9 +57,9 @@ export const custom = (interaction: Interaction): string => {
             finished2 += `${index + 1}. ${el}\n`;
         })
 
-        return `**(10/10)** Drawing teams!\n\n🔵 Team Blue 🔵\n${finished1}\n🔴 Team Red 🔴\n${finished2}`;
-    } else if(members.length < 10) {
-        return `**(${members.length}/10)** | ${10 - members.length} to go!`;
+        return `**(${players}/${players})** Drawing teams!\n\n🔵 Team Blue 🔵\n${finished1}\n🔴 Team Red 🔴\n${finished2}`;
+    } else if(members.length < players) {
+        return `**(${members.length}/${players})** | ${players - members.length} to go!`;
     } else {
         return 'Something went wrong! :face_with_raised_eyebrow:';
     }
