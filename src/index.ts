@@ -1,19 +1,22 @@
 import { Client, GatewayIntentBits, Routes } from "discord.js";
 import { REST } from "@discordjs/rest";
 import { commands } from './commands';
+import { custom, help } from './functions'
 
 require("dotenv").config();
 
 const token = process.env.TOKEN as string;
 const guildId = process.env.GUILD_ID as string;
 const clientId = process.env.CLIENT_ID as string;
+export const members: string[] = [];
 
 const client = new Client({ 
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildVoiceStates
     ]
 })
 
@@ -29,15 +32,18 @@ rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
 	.catch(console.error);
 
 
-client.on('interactionCreate', (interaction) => {
+client.on('interactionCreate', async (interaction) => {
     if(!interaction.isChatInputCommand()) return;
 
     const { commandName } = interaction;
 
-    if(commandName === 'test') {
-        
+    if(commandName === 'custom') {
+        const respond = await custom(interaction);
+        interaction.reply(respond);
+    } else if(commandName === 'help'){
+        const respond = await help(commands);
+        interaction.reply(respond);
     }
-        
 })
 
 client.login(token) //last line
