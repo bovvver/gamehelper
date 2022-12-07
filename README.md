@@ -40,11 +40,11 @@ GUILD_ID=your_guild_id
 
 ## Commands
 
-**/help** - list of commands,
-**/custom**  - Draws two teams for 5v5 League of Legends custom game. 
-**/4v4** - Draws two teams for 4v4 League of Legends custom game. 
-**/3v3** - Draws two teams for 3v3 League of Legends custom game. 
-**/2v2** - Draws two teams for 2v2 League of Legends custom game.
+**/help** - list of commands,<br/>
+**/custom**  - Draws two teams for 5v5 League of Legends custom game. <br/>
+**/4v4** - Draws two teams for 4v4 League of Legends custom game. <br/>
+**/3v3** - Draws two teams for 3v3 League of Legends custom game. <br/>
+**/2v2** - Draws two teams for 2v2 League of Legends custom game.<br/>
 
 > :warning: **Note**: There are only commands for one game for now. It'll be expanded in future. 
 
