@@ -7,7 +7,8 @@
 <h2>Game Helper 🎮</h2>
 <p>
 <strong>Discord bot</strong> created to help gamers in drawing teams 
-<br/>⭐ (and <strong>more</strong> in future) ⭐
+<br/>⭐ (and <strong>more</strong> in future) ⭐<br/><br/>
+<img src="/icon/giphy.gif" />
 </div>
 
 
